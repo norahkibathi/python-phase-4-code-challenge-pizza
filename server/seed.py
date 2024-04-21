@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
 from app import app
+from flask_sqlalchemy import SQLAlchemy
+
 from models import db, Restaurant, Pizza, RestaurantPizza
 
 with app.app_context():
@@ -13,14 +15,14 @@ with app.app_context():
     RestaurantPizza.query.delete()
 
     print("Creating restaurants...")
-    shack = Restaurant(name="Kate's Pizza Shack", address='address1')
-    bistro = Restaurant(name="Kennendy's Pizza", address='address2')
-    palace = Restaurant(name="Sandra", address='address3')
+    shack = Restaurant(name="Karen's Pizza Shack", address='address1')
+    bistro = Restaurant(name="Sanjay's Pizza", address='address2')
+    palace = Restaurant(name="Kiki's Pizza", address='address3')
     restaurants = [shack, bistro, palace]
 
     print("Creating pizzas...")
 
-    cheese = Pizza(name="Wambui", ingredients="Dough, Tomato Sauce, Cheese")
+    cheese = Pizza(name="Emma", ingredients="Dough, Tomato Sauce, Cheese")
     pepperoni = Pizza(
         name="Geri", ingredients="Dough, Tomato Sauce, Cheese, Pepperoni")
     california = Pizza(
